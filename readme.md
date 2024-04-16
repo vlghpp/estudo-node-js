@@ -97,4 +97,4 @@
     > - .not.toBe() -> Espero que não seja
     > - .toEqual() -> Espero que seja igual
 
-- Ver a documentação do jest para mais informações, em: jestjs.io
+- Ver a documentação do jest para mais informações, em: [Clique aqui para ver a documentação do jest](https://jestjs.io)
