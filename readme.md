@@ -1,5 +1,7 @@
 # Repositório feito para demarcar meu progresso em Node.js
 
+- Este README.md serve como minhas anotações para cada novo conteúdo que eu aprender em node, desta forma consigo ver meu progresso e melhorar em minhas falhas e dificuldades.
+
 ## Como executar arquivos .js em Node - Dia 00
 
 - Para executar arquivos em node é similar ao Java, quando é necessário compilar o arquivo e depois executa-lo com javac e java. Com node basta só executar dando:
@@ -98,3 +100,8 @@
     > - .toEqual() -> Espero que seja igual
 
 - Ver a documentação do jest para mais informações, em: [Clique aqui para ver a documentação do jest](https://jestjs.io)
+
+
+## Colocando em prática os Testes - Dia 05
+
+
