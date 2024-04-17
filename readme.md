@@ -104,4 +104,28 @@
 
 ## Colocando em prática os Testes - Dia 05
 
+- Dado o exercicio de prática de testes, onde é necessário criar uma função que tem parâmetros: distancia e tipo de combustivel(etanol ou gasolina), calcular o total de gasolina que será necessária para a distância x. Pode ver a resolução do exercicio em exercicio01.js, já seus testes unitários em exercicio01.test.js (primeiro teste para caso seja desejado gasolina e o segundo para caso seja etanol) 
 
+```
+    > test
+    > jest --coverage
+
+    PASS  ./exercicio01.test.js
+    √ O total de gasolina percorrido 272km é de 17 litros (3 ms)
+    √ O total de etanol percorrido 220km é de 20 litros (1 ms)
+
+    ----------------|---------|----------|---------|---------|-------------------
+    File            | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+    ----------------|---------|----------|---------|---------|-------------------
+    All files       |     100 |     87.5 |     100 |     100 | 
+    exercicio01.js  |     100 |     87.5 |     100 |     100 | 17
+    ----------------|---------|----------|---------|---------|-------------------
+    Test Suites: 1 passed, 1 total
+    Tests:       2 passed, 2 total
+    Snapshots:   0 total
+    Time:        0.502 s, estimated 1 s
+    Ran all test suites.
+```
+- Este foi o resultado dos meus testes (usando a flag --coverage para fazer essa tabela)
+
+## Conhecendo APIs HTTP - Dia 06
