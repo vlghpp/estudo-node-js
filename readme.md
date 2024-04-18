@@ -129,3 +129,42 @@
 - Este foi o resultado dos meus testes (usando a flag --coverage para fazer essa tabela)
 
 ## Conhecendo APIs HTTP - Dia 06
+
+### APIs (Application Programming Interface)
+- No português Interface de Programação de Aplicativos, é uma interface utilizada para disponibilizar as funções de um sistema para outros sistemas facilitando a comunicação e integração entre eles. De modo que as aplicações externas que usam essa interface não tem acesso direto ao seu sistema e como ele foi implementado. Essas funções geralmente são usadas para guardar/buscar/manipular dados, mas quem está usando
+essa interface não quer saber como o sistema está fazendo isso o que importa é ter o resultado esperado. As APIs são comumente usadas para comunicação entre o front-end e o back-end, mas também podem ser utilizadas dentro do back-end ou até mesmo de outra API para realizar alguma função.
+
+### HTTP e Status Code
+
+- HTTP é um protocolo que possibilita a comunicação entre sistemas de forma simples, suportando texto, imagens e outros tipos de mídia. Assim que é feito um REQUEST(pedido) é aberta uma conexão entre o cliente e o servidor, uma vez que servidor envia o RESPONSE(resposta) essa conexão se fecha.
+
+- Status Code são códigos que o servidor responde para o cliente sobre a situação do seu método (get/post/pul/delete). Veja alguns exemplos: 
+
+1. Respostas de informação (100-199),
+2. Respostas de sucesso (200-299),
+3. Redirecionamentos (300-399)
+4. Erros do cliente (400-499)
+5. Erros do servidor (500-599).
+
+- Mais famosos: 
+
+1. 200: Ok
+2. 204: NoContent
+3. 400: BadRequest
+4. 401: Unauthorized
+5. 404: NotFound
+6. 500: InternalServerError
+
+### Principais Métodos HTTP
+
+- GET: é o método mais comum, geralmente usado para solicitar que um servidor envie um recurso;
+
+- POST: foi projetado para enviar dados de entrada para o servidor. Na prática, é frequentemente utilizado para adicionar, criar, enviar informações ao servidor;
+
+- PUT: edita e atualiza as informações em um servidor;
+
+- DELETE: como o próprio nome já diz, deleta certo dado ou coleção do servidor.
+
+### Rotas
+
+- Quando criamos uma API, definimos uma rota para ela. Durante um REQUEST é essa rota que será percorrida para localizar a nossa API. Que é a nossa URL.
