@@ -252,4 +252,45 @@ essa interface não quer saber como o sistema está fazendo isso o que importa �
 - Agora volte ao navegador ao site API Generator e acesse o método GET, ou pode fazer pelo próprio Insomnia (Verá que agora aparecem dois objetos diferentes)
 
 
+### Método PUT 
+
+- O método PUT é aquele que serve para fazer alterações nos nossos objetos, então, seguindo os mesmos exemplos dos outros métodos, caso eu queria alterar o nome do meu Objeto 1, que seria este:
+
+```
+    {
+        "nome": "Henrique",
+        "turma": "Backend",
+        "idade": 19,
+        "id": 1
+    }
+```
+- IMPORTANTE: O PUT ele age baseado no id de um objeto, então se eu quero editar o objeto 2 eu pego a rota para o objeto 2, por exemplo: https://apigenerator.dronahq.com/api/nGPawxMh/alunos/2
+
+- Vamos supor que agora você queria mudar o nome e a turma para: Henrique Patricio e FullStack, basta você dar um get no id 1 (já que o Henrique é nosso primeiro objeto). Você pode dar um GET by ID no primeiro objeto para ele aparecer na tela:
+
+#### Passo 01
+
+![Passo 01 - PUT](https://i.imgur.com/TAACaM2.png)
+
+- Desta forma, o Insomnia vai retornar para você no lado direito (em vermelho) o resultado do GET by ID 1, neste caso é o Henrique apenas. Depois disto, você copiará para o lado esquerdo no JSON (caso você esteja com algum outro objeto ali, senão tiver igual o meu exemplo em que meu objeto que aparece no JSON já é o 1, não faça nada)
+
+- Depois você mudara o método para o PUT e colocar o link do objeto 1: https://apigenerator.dronahq.com/api/nGPawxMh/alunos/1
+
+- Agora você fará as alterações que quiser no objeto, neste caso queremos mudar de apenas Henrique para Henrique Patricio e também de Backend para FullStack.
+
+![Passo 02 - PUT](https://i.imgur.com/FH1AQ3c.png)
+
+- Em vermelho podemos ver que foi colocado no Método PUT e a rota para o objeto 1
+
+- Em preto é o resultado do nosso GET no passo anterior.
+
+- Em ciano é a nossa alteração desejada já feita. Depois de feita basta apenas clicar em SEND, pronto, se você voltar para o navegado no API Generator e dar um GET verá que o seu objeto 1 teve suas alterações.
+
+
+### Método DELETE
+
+- O método DELETE é bem autoexplicativo, ele funciona para excluir um objeto. Para executar este método, basta seguir os mesmos passos anteriores, você vai mudar o método no Insomnia para DELETE, pegar a rota do objeto que você quer excluir e depois clicar em SEND. Desta forma ele vai ter excluido seu objeto desejado.
+
+
+
 
