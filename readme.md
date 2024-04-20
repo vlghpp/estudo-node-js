@@ -168,3 +168,88 @@ essa interface não quer saber como o sistema está fazendo isso o que importa �
 ### Rotas
 
 - Quando criamos uma API, definimos uma rota para ela. Durante um REQUEST é essa rota que será percorrida para localizar a nossa API. Que é a nossa URL.
+
+## APIs HTTP na prática - Dia 07
+
+- Neste dia vamos ver um conteúdo de APIs mais na prática, utilizando o site [Api Generator](https://apigenerator.dronahq.com/) podemos criar uma API para fazer alguns testes e ver como elas funcionam. 
+    > - Ao acessar o site ir em "Raw JSON" e escrever um json de teste, por exemplo:
+
+    ```
+        {
+            "nome": "Henrique",
+            "turma": "Backend",
+            "idade": 19
+        }
+    ```
+
+### Insomnia
+
+- Para fazer os testes da API e os Status Code, eu vou utilizar desse aplicativo que se chama Insomnia, abaixo está o link e vou fazer alguns passo a passos.
+    > - [Link para baixar o Insomnia](https://insomnia.rest/download)
+
+### Método GET no Navegador
+- Depois de acessado e criado um nome, deverá aparecer alguns métodos HTTP com links, por exemplo o método GET, se você clicar em cima do link (requisitará um get de todos objetos que você tem, nesse caso apenas um que é o do "Henrique")
+- Também tem o Get by ID, neste caso criará um ID para cada objeto, e desta forma no url da página você poderá acessar cada objeto pelo seu id, por exemplo: 
+    > - https://apigenerator.dronahq.com/api/nGPawxMh/alunos/1
+    > - Este é um link da minha API alunos, pegando o objeto de número 1 que me retornará o seguinte:
+    ```
+        {
+            "nome": "Henrique",
+            "turma": "Backend",
+            "idade": 19,
+            "id": 1
+        }
+
+        (O status code é 200 OK, pois me retornou algo que realmente existe)
+    ```
+    
+    > - Caso eu passe o ID /2, me retornará o seguinte:
+    ```
+        {}
+    ```
+    > - Neste caso me retornará o código 404 NotFound, pois não tenho um objeto de ID 2.
+
+### Método Get no Insomnia
+
+- Para usar o Insomnia ao seu favor basta baixa-lo e abri-lo, quando você abrir vai estar em uma tela similar a de baixo:
+
+![Get com Insomnia](https://i.imgur.com/GMr5gIG.png)
+
+- Para conseguir acessar os métodos neste aplicativo vá em Create > Design document (está em vermelho na foto)
+
+- Depois copie a rota (URL) do método get gerado no API Generator e cole no campo com o método GET selecionado
+
+![Get com Insomnia](https://i.imgur.com/LSMvGYL.png)
+
+- Note que ao clicar em SEND (enviar) você terá duas respostas, no quadrado ciano você vera o status code do método neste caso foi 200 OK, ou seja, não era pra retornar nada, mas disse que deu certo. 
+
+- Em rosa você pode notar o que o GET nos trouxe, neste caso será todos os objetos que sua API registrou até o momento (se você fizer um POST e adicionar um objeto novo e dar um GET novamente você vai notar que vai aparecer o novo objeto também. Faça o este e análise!)
+
+### Método POST
+
+- Utilizando o método POST, conseguimos pegar nossa API alunos criada anteriormente, e adicionar/criar um novo objeto, ou seja, vamos criar o objeto de ID 2. (É necessário baixar e instalar o aplicativo Insomnia)
+    > - [Link para baixar o Insomnia](https://insomnia.rest/download)
+
+- Já no aplicativo Insomnia, podemos criar esse nosso objeto da seguinte forma:
+
+#### Passo 01
+![Passo 1](https://i.imgur.com/cUNHuTF.png)
+
+- Em vermelho ao adicionar o método que queremos, neste caso o método POST e logo depois adicionarmos o link que o APIs Generator gerou para o método POST, podemos criar um novo objeto.
+
+- Em rosa selecione o Body e vá na opção JSON, é ali que vamos criar nosso novo objeto, da mesma forma em que o primeiro foi escrito.
+
+#### Passo 02
+
+![Passo 2](https://i.imgur.com/5wZtt0s.png)
+
+- Em rosa é o espaço para criar o nosso novo objeto, já que o método POST nos oferta essa função, a de adicionar/criar um novo objeto.
+
+- Depois de criar o objeto JSON clique em SEND (para enviar para nossa API que foi criada um novo objeto, normalmente na vida real quem faz isso é o frontend que envia para a nossa API do back para ser criado esse novo cadastro, por exemplo)
+
+- Note que ao lado direito em vermelho foi retornado o Status Code 201 Created, ou seja, 200 é da familia status code de sucesso, então nosso novo objeto foi criado com sucesso. Parabéns. 
+
+- Agora volte ao navegador ao site API Generator e acesse o método GET, ou pode fazer pelo próprio Insomnia (Verá que agora aparecem dois objetos diferentes)
+
+
+
