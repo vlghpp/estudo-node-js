@@ -291,6 +291,79 @@ essa interface não quer saber como o sistema está fazendo isso o que importa �
 
 - O método DELETE é bem autoexplicativo, ele funciona para excluir um objeto. Para executar este método, basta seguir os mesmos passos anteriores, você vai mudar o método no Insomnia para DELETE, pegar a rota do objeto que você quer excluir e depois clicar em SEND. Desta forma ele vai ter excluido seu objeto desejado.
 
+## Promises e funções assíncronas no JS - Dia 08
+
+### Promise
+
+- Promise ou promessa é um objeto JavaScript que representa a eventual conclusão ou falha de uma operação assíncrona. Ela permite que você trabalhe com operações assíncronas de maneira mais fácil e eficiente, evitando o chamado "callback hell" e permitindo um código mais legível e organizado.
+
+- Uma Promise pode estar em um de três estados:
+
+    > - Pendente (Pending): Este é o estado inicial da Promise, quando a operação ainda não foi concluída.  
+    > - Resolvida (Fulfilled): A operação assíncrona foi concluída com sucesso e o valor resultante está disponível. Neste ponto, a Promise é considerada "cumprida".
+    > - Rejeitada (Rejected): A operação assíncrona falhou, e um motivo de falha (geralmente um objeto Error) é fornecido. Neste ponto, a Promise é considerada "rejeitada".
+
+- Após criar uma Promise, você pode encadear métodos .then() e .catch() para lidar com a resolução ou rejeição da Promise. Isso permite que você execute código dependendo do resultado da operação assíncrona.
+
+### Callbacks
+
+- Callbacks são funções que passam com parâmetro outras funções, na ideia de que quando o evento principal tiver acabado ela execute o evento secundário (função passada como parâmetro)
+
+```
+    setTimeout(function () {
+        console.log("Este é um evento após 2 segundos")
+    }, 2 * 1000)
+```
+- Executa a função setTimeout() que define um tempo de resposta, neste caso de 2 segundos, e passa dentro da função o que você quer executar.
 
 
+### Funções assíncronas
 
+- As funções assíncronas são de facíl entendimento, servem para executar trechos de código em paralelismo a outros trechos. Por exemplo, imagine que você está preparando seu café da manhã; De primeira vista você quer fazer café, então você coloca a água para esquentar, e, enquanto esquenta você faz um pão com queijo. Note que a função esquentarAgua() não depende da função fazerPao() e vice-versa. Essa é a ideia da função assíncrona. 
+
+- Um exemplo prático de função assíncrona é 
+
+```
+    function teste(){
+    console.log('Iniciando')
+    let exemplo = fetch('http://httpbin.org/get').then((res) => {
+        console.log('Aqui está dentro do then')
+        console.log()
+    })
+    console.log("Depois de tudo")
+}
+
+```
+
+- Este é um exemplo que funciona da seguinte forma: 
+    > - 1º Ele da um console.log('iniciando')
+    > - 2º Ele dá um fetch da API e aguarda uma resposta dela, e enquanto isso ele realiza o passo 3
+    > - 3º Ele executará o console.log("Depois de tudo")
+    > - 4º Ele entrará no then, pois vai ser uma promise com sucesso e executará o trecho de código dentro dele
+
+- Para fazer com que o servidor guarde a resposta da API e execute o then primeiro do que o console.log("Depois de tudo"), podemos utilizar o async
+
+### Funções assíncronas async
+
+- As funções async são as assíncronas, mas liberam uma funcionalidade chamada await, que resolve o problema de esperar a resposta da API para depois executar os outros códigos.
+
+- É necessário declarar a função async como: async function 'nome da função'(){}
+
+```
+    async function teste(){
+    console.log('Iniciando')
+    let exemplo = await fetch('http://httpbin.org/get').then((res) => {
+        console.log('Aqui está dentro do then')
+        console.log()
+    }).catch(error => {
+        console.log("A API retornou um erro: " + error)
+    })
+    console.log("Depois de tudo")
+}
+
+```
+- Desta forma ele executarpá da seguinte forma: 
+    > - 1º Ele da um console.log('iniciando')
+    > - 2º Ele dá um fetch da API e espera até que a Promise seja resolvida, Fullfield ou Resjected
+    > - 3º Ele executará o que está dentro do then, caso seja Fullfield (verdadeira e sem erros) ou executará a linha de código do catch caso seja Rejected
+    > - 4º Ele entrará o console.log("Depois de tudo")
