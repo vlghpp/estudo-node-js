@@ -1,3 +1,9 @@
+/*
+    Faça um código que vire um jogo interativo com o usuário de trivia game, utilize a api: https://opentdb.com/api.php
+    para escolher o tipo de pergunta, a quatidade e a dificuldade.
+
+*/
+
 let nextQuestion = document.getElementById('question-container')
 let nextButton = document.getElementById('next-btn')
 
