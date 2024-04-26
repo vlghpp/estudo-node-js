@@ -24,9 +24,7 @@ cep.addEventListener('input', async function (){
         })
         .catch(error => {
             console.error("Erro ao encontrar o endereço: ", error);
-        })
-        console.log(cep.length);
-    }
+        })}
 })
 
 
