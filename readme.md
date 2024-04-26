@@ -367,3 +367,17 @@ essa interface não quer saber como o sistema está fazendo isso o que importa �
     > - 2º Ele dá um fetch da API e espera até que a Promise seja resolvida, Fullfield ou Resjected
     > - 3º Ele executará o que está dentro do then, caso seja Fullfield (verdadeira e sem erros) ou executará a linha de código do catch caso seja Rejected
     > - 4º Ele entrará o console.log("Depois de tudo")
+
+## Praticando Promises e Funções Assíncronas - Dia 09
+
+- Neste repositório estou subindo algumas práticas que estou fazendo, consumindo APIs.
+
+### Transformador de USD para BRL
+- Transformador de USD para BRL -> Seu objeto é consumir a API: [Economia API](https://economia.awesomeapi.com.br/last/USD-BRL) que consiste em fazer a conversão. A ideia do projeto é que o usuário entre com a quantidade de dolares e o código retorna o equivalente em reais (R$)
+
+![Imagem Projeto Transformador USD para BRL](https://i.imgur.com/VWiM7Zn.png)
+
+### Buscador de CEP
+- Buscador de CEP -> Seu objetivo é consumir a API: [Via Cep](https://cep.awesomeapi.com.br/json/) que consiste em buscar o cep digitado na API. A ideia do projeto é a de praticar pois, este tipo de API é comumente utilizada em forms.
+
+![Imagem Projeto ViaCep](https://i.imgur.com/bUplEQ8.png)
