@@ -381,3 +381,6 @@ essa interface não quer saber como o sistema está fazendo isso o que importa �
 - Buscador de CEP -> Seu objetivo é consumir a API: [Via Cep](https://cep.awesomeapi.com.br/json/) que consiste em buscar o cep digitado na API. A ideia do projeto é a de praticar pois, este tipo de API é comumente utilizada em forms.
 
 ![Imagem Projeto ViaCep](https://i.imgur.com/bUplEQ8.png)
+
+
+# FIM - POR AQUI TERMINO MEUS ESTUDOS EM NODE.JS, E COMEÇO A ME APROFUNDAR MAIS EM BACK-END
